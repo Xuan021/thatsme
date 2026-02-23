@@ -3,76 +3,375 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LIM XUAN</title>
+<title id="page-title">UNCLE LIM - My Personal Site</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#1a2744;--gold:#c9a84c;--gold-light:#f0d98a;--cream:#faf8f3;--text:#2c3452;--muted:#7a809a;--border:#e8e4da;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;}
-nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(250,248,243,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--navy);font-weight:600;}
-.nav-links{display:flex;gap:2rem;align-items:center;}
-.nav-links a{text-decoration:none;color:var(--muted);font-size:0.9rem;transition:color 0.2s;}
-.nav-links a:hover{color:var(--navy);}
-.lang-toggle{display:flex;gap:4px;background:var(--border);border-radius:20px;padding:3px;}
-.lang-btn{border:none;background:transparent;padding:4px 12px;border-radius:16px;font-size:0.8rem;cursor:pointer;color:var(--muted);font-family:'DM Sans',sans-serif;transition:all 0.2s;}
-.lang-btn.active{background:var(--navy);color:white;}
-.hero{min-height:100vh;display:flex;align-items:center;padding:80px 5% 60px;background:linear-gradient(135deg,var(--cream) 60%,#eee9d8 100%);position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(201,168,76,0.12) 0%,transparent 70%);border-radius:50%;}
-.hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
-.hero-tag{display:inline-block;background:rgba(201,168,76,0.15);color:var(--gold);font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:1.2rem;border:1px solid rgba(201,168,76,0.3);}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.2rem);line-height:1.2;color:var(--navy);margin-bottom:1rem;}
-.hero-subtitle{font-size:1.05rem;color:var(--muted);margin-bottom:2rem;font-weight:300;}
-.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;}
-.btn-primary{background:var(--navy);color:white;padding:12px 28px;border-radius:6px;text-decoration:none;font-size:0.9rem;font-weight:500;transition:all 0.2s;border:2px solid var(--navy);}
-.btn-primary:hover{background:#253460;transform:translateY(-1px);}
-.btn-outline{background:transparent;color:var(--navy);padding:12px 28px;border-radius:6px;text-decoration:none;font-size:0.9rem;font-weight:500;transition:all 0.2s;border:2px solid var(--navy);}
-.btn-outline:hover{background:var(--navy);color:white;}
-.hero-card{background:white;border-radius:16px;padding:2.5rem;box-shadow:0 8px 40px rgba(26,39,68,0.08);border:1px solid var(--border);}
-.avatar-ring{width:90px;height:90px;border-radius:50%;border:3px solid var(--gold);background:linear-gradient(135deg,var(--navy),#2c3e6e);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);margin:0 auto 1.2rem;}
-.hero-card h3{font-family:'Playfair Display',serif;text-align:center;font-size:1.3rem;color:var(--navy);margin-bottom:0.3rem;}
-.hero-card .role{text-align:center;color:var(--muted);font-size:0.88rem;margin-bottom:1.5rem;}
-.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;}
-.stat-box{background:var(--cream);border-radius:10px;padding:1rem;text-align:center;}
-.stat-num{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--navy);font-weight:600;}
-.stat-label{font-size:0.75rem;color:var(--muted);}
-.trust-badges{display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;}
-.badge{background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-size:0.72rem;padding:3px 10px;border-radius:20px;}
-section{padding:80px 5%;}
-.section-inner{max-width:1100px;margin:0 auto;}
-.section-label{font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.3rem);color:var(--navy);margin-bottom:1rem;}
-.section-desc{color:var(--muted);max-width:520px;margin-bottom:3rem;}
-#services{background:white;}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;}
-.service-card{border:1px solid var(--border);border-radius:12px;padding:2rem;transition:all 0.25s;background:var(--cream);}
-.service-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 12px 30px rgba(26,39,68,0.07);}
-.service-icon{width:48px;height:48px;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.2rem;}
-.service-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--navy);margin-bottom:0.6rem;}
-.service-card p{font-size:0.9rem;color:var(--muted);}
-#contact{background:var(--navy);}
-#contact .section-label{color:rgba(201,168,76,0.8);}
-#contact .section-title{color:white;}
-#contact .section-desc{color:rgba(255,255,255,0.5);}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
-.contact-links{display:flex;flex-direction:column;gap:1rem;}
-.contact-link{display:flex;align-items:center;gap:1rem;color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.95rem;padding:1rem 1.2rem;background:rgba(255,255,255,0.05);border-radius:10px;border:1px solid rgba(255,255,255,0.08);transition:all 0.2s;}
-.contact-link:hover{background:rgba(255,255,255,0.1);color:white;}
-.contact-form{display:flex;flex-direction:column;gap:1rem;}
-.form-input{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:12px 16px;color:white;font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.2s;}
-.form-input::placeholder{color:rgba(255,255,255,0.3);}
-.form-input:focus{border-color:var(--gold);}
-textarea.form-input{resize:vertical;min-height:120px;}
-.btn-gold{background:var(--gold);color:var(--navy);border:none;padding:13px 28px;border-radius:6px;font-weight:600;font-family:'DM Sans',sans-serif;font-size:0.9rem;cursor:pointer;transition:all 0.2s;align-self:flex-start;}
-.btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);}
-footer{background:#111928;color:rgba(255,255,255,0.4);text-align:center;padding:2rem 5%;font-size:0.82rem;}
-.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
-.fade-in.visible{opacity:1;transform:translateY(0);}
-@media(max-width:768px){.hero-inner{grid-template-columns:1fr;}.hero-card{display:none;}.contact-grid{grid-template-columns:1fr;}.nav-links a{display:none;}}
+  :root {
+    --navy: #1a2744;
+    --gold: #c9a84c;
+    --gold-light: #f0d98a;
+    --cream: #faf8f3;
+    --white: #ffffff;
+    --text: #2c3452;
+    --muted: #7a809a;
+    --border: #e8e4da;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(250,248,243,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem; color: var(--navy); font-weight: 600;
+  }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a {
+    text-decoration: none; color: var(--muted); font-size: 0.9rem;
+    font-weight: 400; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--navy); }
+  .lang-toggle {
+    display: flex; gap: 4px;
+    background: var(--border); border-radius: 20px; padding: 3px;
+  }
+  .lang-btn {
+    border: none; background: transparent; padding: 4px 12px;
+    border-radius: 16px; font-size: 0.8rem; cursor: pointer;
+    color: var(--muted); font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+  }
+  .lang-btn.active {
+    background: var(--navy); color: white;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 80px 5% 60px;
+    background: linear-gradient(135deg, var(--cream) 60%, #eee9d8 100%);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-inner {
+    max-width: 1100px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(201,168,76,0.15); color: var(--gold);
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 20px; margin-bottom: 1.2rem;
+    border: 1px solid rgba(201,168,76,0.3);
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    line-height: 1.2; color: var(--navy); margin-bottom: 1rem;
+  }
+  .hero-subtitle {
+    font-size: 1.05rem; color: var(--muted); margin-bottom: 2rem; font-weight: 300;
+  }
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--navy); color: white;
+    padding: 12px 28px; border-radius: 6px; text-decoration: none;
+    font-size: 0.9rem; font-weight: 500; transition: all 0.2s;
+    border: 2px solid var(--navy);
+  }
+  .btn-primary:hover { background: #253460; border-color: #253460; transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: var(--navy);
+    padding: 12px 28px; border-radius: 6px; text-decoration: none;
+    font-size: 0.9rem; font-weight: 500; transition: all 0.2s;
+    border: 2px solid var(--navy);
+  }
+  .btn-outline:hover { background: var(--navy); color: white; }
+
+  .hero-card {
+    background: white; border-radius: 16px;
+    padding: 2.5rem; box-shadow: 0 8px 40px rgba(26,39,68,0.08);
+    border: 1px solid var(--border); position: relative;
+  }
+  .avatar-ring {
+    width: 90px; height: 90px; border-radius: 50%;
+    border: 3px solid var(--gold);
+    background: linear-gradient(135deg, var(--navy), #2c3e6e);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold);
+    margin: 0 auto 1.2rem;
+  }
+  .hero-card h3 {
+    font-family: 'Playfair Display', serif; text-align: center;
+    font-size: 1.3rem; color: var(--navy); margin-bottom: 0.3rem;
+  }
+  .hero-card .role {
+    text-align: center; color: var(--muted); font-size: 0.88rem; margin-bottom: 1.5rem;
+  }
+  .stat-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;
+  }
+  .stat-box {
+    background: var(--cream); border-radius: 10px; padding: 1rem; text-align: center;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif; font-size: 1.6rem;
+    color: var(--navy); font-weight: 600;
+  }
+  .stat-label { font-size: 0.75rem; color: var(--muted); }
+  .trust-badges {
+    display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;
+  }
+  .badge {
+    background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold); font-size: 0.72rem; padding: 3px 10px; border-radius: 20px;
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 80px 5%; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 3vw, 2.3rem); color: var(--navy); margin-bottom: 1rem;
+  }
+  .section-desc { color: var(--muted); max-width: 520px; margin-bottom: 3rem; }
+
+  /* ── SERVICES ── */
+  #services { background: white; }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;
+  }
+  .service-card {
+    border: 1px solid var(--border); border-radius: 12px; padding: 2rem;
+    transition: all 0.25s; background: var(--cream);
+  }
+  .service-card:hover {
+    border-color: var(--gold); transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(26,39,68,0.07);
+  }
+  .service-icon {
+    width: 48px; height: 48px; background: var(--navy);
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; margin-bottom: 1.2rem;
+  }
+  .service-card h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.1rem;
+    color: var(--navy); margin-bottom: 0.6rem;
+  }
+  .service-card p { font-size: 0.9rem; color: var(--muted); }
+
+  /* ── BLOG ── */
+  #thoughts { background: var(--cream); }
+  .posts-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;
+  }
+  .post-card {
+    background: white; border-radius: 12px; padding: 1.8rem;
+    border: 1px solid var(--border); transition: all 0.25s; cursor: pointer;
+  }
+  .post-card:hover { box-shadow: 0 8px 24px rgba(26,39,68,0.08); transform: translateY(-2px); }
+  .post-date { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.6rem; }
+  .post-card h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.05rem;
+    color: var(--navy); margin-bottom: 0.5rem; line-height: 1.4;
+  }
+  .post-card p { font-size: 0.88rem; color: var(--muted); }
+  .post-tag {
+    display: inline-block; margin-top: 1rem;
+    background: rgba(26,39,68,0.07); color: var(--navy);
+    font-size: 0.72rem; padding: 3px 10px; border-radius: 20px;
+  }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--navy); }
+  #contact .section-label { color: var(--gold-light); }
+  #contact .section-title { color: white; }
+  #contact .section-desc { color: rgba(255,255,255,0.5); }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+  }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 1rem;
+    color: rgba(255,255,255,0.7); text-decoration: none;
+    font-size: 0.95rem; padding: 1rem 1.2rem;
+    background: rgba(255,255,255,0.05); border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08); transition: all 0.2s;
+  }
+  .contact-link:hover { background: rgba(255,255,255,0.1); color: white; }
+  .contact-icon { font-size: 1.2rem; }
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-input {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px; padding: 12px 16px; color: white;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem; outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-input::placeholder { color: rgba(255,255,255,0.3); }
+  .form-input:focus { border-color: var(--gold); }
+  textarea.form-input { resize: vertical; min-height: 120px; }
+  .btn-gold {
+    background: var(--gold); color: var(--navy); border: none;
+    padding: 13px 28px; border-radius: 6px; font-weight: 600;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    cursor: pointer; transition: all 0.2s; align-self: flex-start;
+  }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #111928; color: rgba(255,255,255,0.4);
+    text-align: center; padding: 2rem 5%; font-size: 0.82rem;
+  }
+  footer span { color: var(--gold); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-card { display: none; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .nav-links a { display: none; }
+  }
+
+  /* ── FADE IN ── */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
 </style>
+
+<!-- ═══════════════════════════════════════════════
+     CONFIG — Edit this section only!
+     朋友们只需要修改这里的内容就可以了！
+     ═══════════════════════════════════════════════ -->
+<script>
+const CONFIG = {
+  // ── Personal Info / 个人信息
+  name:        "LIM XUAN",          // Your name / 你的名字
+  nameZh:      "林轩",               // Name in Chinese (optional) / 中文名（可选）
+  tagline_en:  "Unit Trust Consultant & Thought Writer",
+  tagline_zh:  "理财顾问 · 思想分享者",
+  bio_en:      "I help individual and families grow their wealth through smart unit trust investments — and share honest thoughts on money, life, and everything in between.",
+  bio_zh:      "我帮助个人与家庭通过明智的单位信托投资来增长财富，同时分享关于金钱、生活的真实想法。",
+
+  // ── Avatar initial (first letter shown in circle)
+  avatarLetter: "A",
+
+  // ── Trust stats / 信任数字
+  stat1_num: "10k", stat1_label_en: "Assets managed",      stat1_label_zh: "资产管理",
+  stat2_num: "3yr",  stat2_label_en: "Stock Market Experience",   stat2_label_zh: "年股市经验",
+
+  // ── Badges shown on card
+  badges_en: ["Licensed Consultant", "Unit Trust", "PRS"],
+  badges_zh: ["持牌顾问", "单位信托", "私人退休金"],
+
+  // ── Navigation links / 导航链接
+  nav_links_en: ["Services", "Thoughts", "Contact"],
+  nav_links_zh: ["服务", "分享", "联系我"],
+  nav_anchors:  ["#services", "#thoughts", "#contact"],
+
+  // ── Services (add/remove as needed) / 服务列表
+  services: [
+    {
+      icon: "📈",
+      title_en: "Unit Trust Investment",
+      title_zh: "单位信托投资",
+      desc_en: "Tailored investment portfolios matching your risk appetite and financial goals. We review and rebalance regularly.",
+      desc_zh: "根据您的风险承受能力和财务目标量身定制的投资组合，定期检视和调整。"
+    },
+    {
+      icon: "🛡️",
+      title_en: "Retirement Planning (PRS)",
+      title_zh: "退休规划 (PRS)",
+      desc_en: "Secure your future with Private Retirement Scheme. Enjoy tax relief while building a retirement nest egg.",
+      desc_zh: "通过私人退休计划保障您的未来，享受税务减免，同时积累退休储蓄。"
+    },
+    {
+      icon: "💬",
+      title_en: "Free Consultation",
+      title_zh: "免费咨询",
+      desc_en: "Not sure where to start? Let's have a no-obligation chat. I'll map out a simple plan that makes sense for you.",
+      desc_zh: "不知道从哪里开始？让我们进行一次无义务的聊天，我会为您规划一个简单易懂的方案。"
+    }
+  ],
+
+  // ── Blog posts / 文章（最多显示3篇）
+  posts: [
+    {
+      date_en: "February 2025",
+      date_zh: "2025年2月",
+      title_en: "Why I Started Investing at 25",
+      title_zh: "为什么我在25岁就开始投资",
+      excerpt_en: "Most people think investing is for the rich. Here's what I learned when I started with just RM100.",
+      excerpt_zh: "大多数人认为投资是富人的事。以下是我从区区100令吉开始投资时学到的东西。",
+      tag_en: "Personal",
+      tag_zh: "个人分享"
+    },
+    {
+      date_en: "January 2025",
+      date_zh: "2025年1月",
+      title_en: "Unit Trust vs Fixed Deposit: The Honest Answer",
+      title_zh: "单位信托 vs 定期存款：诚实的答案",
+      excerpt_en: "Neither is universally better. The right answer depends on your timeline and what you can sleep with at night.",
+      excerpt_zh: "没有哪个普遍更好。正确答案取决于您的时间线和什么让您晚上睡得着觉。",
+      tag_en: "Finance",
+      tag_zh: "理财"
+    },
+    {
+      date_en: "December 2024",
+      date_zh: "2024年12月",
+      title_en: "The Financial Mistake Every Malaysian Makes at 30",
+      title_zh: "每个马来西亚人在30岁时都会犯的理财错误",
+      excerpt_en: "It's not about spending too much. The real mistake is far more subtle — and far more costly.",
+      excerpt_zh: "这不是关于花太多钱。真正的错误要微妙得多——也代价高昂得多。",
+      tag_en: "Finance",
+      tag_zh: "理财"
+    }
+  ],
+
+  // ── Contact info / 联系方式
+  contact_whatsapp: "https://wa.me/60123456789",   // Replace with your number
+  contact_email:    "hello@youremail.com",
+  contact_instagram: "https://instagram.com/yourhandle",
+  contact_linkedin:  "https://linkedin.com/in/yourprofile",
+
+  // ── Footer
+  footer_en: "© 2026 LIMXUAN · Built with 🔥 in Malaysia",
+  footer_zh: "© 2026 林轩 · 用 🔥 在马来西亚制作",
+};
+</script>
+
 </head>
 <body>
+
+<!-- NAV -->
 <nav>
   <div class="nav-logo" id="nav-logo"></div>
   <div class="nav-links" id="nav-links"></div>
@@ -82,6 +381,8 @@ footer{background:#111928;color:rgba(255,255,255,0.4);text-align:center;padding:
     <button class="lang-btn" onclick="setLang('ms')">BM</button>
   </div>
 </nav>
+
+<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <div class="fade-in">
@@ -90,7 +391,7 @@ footer{background:#111928;color:rgba(255,255,255,0.4);text-align:center;padding:
       <p class="hero-subtitle" id="hero-bio"></p>
       <div class="hero-cta">
         <a href="#contact" class="btn-primary" id="btn-consult"></a>
-        <a href="#services" class="btn-outline" id="btn-svc"></a>
+        <a href="#thoughts" class="btn-outline" id="btn-read"></a>
       </div>
     </div>
     <div class="hero-card fade-in">
@@ -98,13 +399,21 @@ footer{background:#111928;color:rgba(255,255,255,0.4);text-align:center;padding:
       <h3 id="card-name"></h3>
       <p class="role" id="card-role"></p>
       <div class="stat-row">
-        <div class="stat-box"><div class="stat-num">—</div><div class="stat-label" id="stat1-label"></div></div>
-        <div class="stat-box"><div class="stat-num">—</div><div class="stat-label" id="stat2-label"></div></div>
+        <div class="stat-box">
+          <div class="stat-num" id="stat1-num"></div>
+          <div class="stat-label" id="stat1-label"></div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num" id="stat2-num"></div>
+          <div class="stat-label" id="stat2-label"></div>
+        </div>
       </div>
       <div class="trust-badges" id="trust-badges"></div>
     </div>
   </div>
 </section>
+
+<!-- SERVICES -->
 <section id="services">
   <div class="section-inner fade-in">
     <div class="section-label" id="svc-label"></div>
@@ -113,6 +422,18 @@ footer{background:#111928;color:rgba(255,255,255,0.4);text-align:center;padding:
     <div class="services-grid" id="services-grid"></div>
   </div>
 </section>
+
+<!-- THOUGHTS -->
+<section id="thoughts">
+  <div class="section-inner fade-in">
+    <div class="section-label" id="post-label"></div>
+    <h2 class="section-title" id="post-title"></h2>
+    <p class="section-desc" id="post-desc"></p>
+    <div class="posts-grid" id="posts-grid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
   <div class="section-inner fade-in">
     <div class="contact-grid">
@@ -124,22 +445,208 @@ footer{background:#111928;color:rgba(255,255,255,0.4);text-align:center;padding:
       </div>
       <div class="contact-form">
         <input class="form-input" id="form-name" type="text" placeholder="Your name">
-        <input class="form-input" id="form-phone" type="tel" placeholder="Phone / WhatsApp">
+        <input class="form-input" id="form-email" type="email" placeholder="Email address">
         <textarea class="form-input" id="form-msg" placeholder="Your message..."></textarea>
         <button class="btn-gold" id="btn-send" onclick="sendMsg()"></button>
       </div>
     </div>
   </div>
 </section>
+
 <footer id="footer-text"></footer>
+
 <script>
-const C={name:"LIM XUAN",nameZh:"林轩",tagline:"Unit Trust Consultant | Portfolio Review",taglineZh:"信托基金顾问 | 投资组合评估",bio:"Listing Company Asist. Manager in ESG with International Business Background Experienced and active in Stock Market (US\TW) Certified Unit Trust Consultant",bioZh:"上市公司ESG助理经理，具备国际业务背景 拥有丰富经验且活跃于股票市场（美国/台湾） 持牌单位信托顾问",stat1l:"Clients",stat1lZh:"Clients",stat2l:"Experience",stat2lZh:"Experience",wa:"60108475657",email:"limxuan1002@gmail.com",ig:"#",li:"#",badgesEn:["Seremban","Unit Trust","Retirement"],badgesZh:["Seremban","Unit Trust","Retirement"],services:[{"icon":"🗺️","title_en":"Savings Scheme Blueprints","title_zh":"储蓄计划蓝图","desc_en":"Customized, step-by-step financial plans designed to help you reach your life milestones. Whether you are saving for retirement, your children's education, or building long-term wealth, these blueprints provide a clear and disciplined path to achieving your goals through structured investing.","desc_zh":"为您量身定制的循序渐进理财计划，助您达成人生各个里程碑。无论您是为了退休生活、子女教育，还是建立长期财富而储蓄，这些蓝图都能通过系统化的投资，为您提供一条清晰且有纪律的达标路径。"},{"icon":"🎯","title_en":"Portfolio Review","title_zh":"投资组合审视","desc_en":"A comprehensive health check for your current investments. We will evaluate your fund performance, assess your risk exposure, and recommend strategic adjustments to ensure your portfolio remains perfectly aligned with your evolving financial objectives and current market conditions.","desc_zh":"为您目前的投资进行全面的“健康检查”。我们将评估您的基金表现、分析您的风险承受能力，并提出策略性调整建议，以确保您的投资组合始终与您不断变化的财务目标及当前市场状况完美契合。"},{"icon":"💬","title_en":"Consultations (any interest)","title_zh":"咨询服务 (任何兴趣)","desc_en":"Let's talk about your financial future. Whether you are completely new to unit trusts or simply exploring your wealth-building options, book a friendly, no-obligation chat. We will discuss your financial aspirations, answer your questions, and discover how tailored investment strategies can work for you.","desc_zh":"让我们聊聊您的财务未来。无论您是信托基金的新手，还是正在探索财富增值方案，都欢迎预约一次轻松且无义务的交流。我们将探讨您的财务愿景，解答您的疑问，并为您寻找最适合您的专属投资策略。"}]};
-const T={en:{tag:"Welcome",h1:"Hi, I'm "+C.name,bio:C.bio,consult:"Get In Touch",svc:"See My Services",stat1:C.stat1l,stat2:C.stat2l,badges:C.badgesEn,svcLabel:"What I Offer",svcTitle:"Services",svcDesc:"Here to help you at every step.",ctcLabel:"Get In Touch",ctcTitle:"Let's Talk",ctcDesc:"Have a question? I'd love to hear from you.",send:"Send via WhatsApp",footer:"© 2025 "+C.name+" · Made in Malaysia"},zh:{tag:"欢迎",h1:"你好，我是 "+C.nameZh,bio:C.bioZh,consult:"联系我",svc:"查看服务",stat1:C.stat1lZh,stat2:C.stat2lZh,badges:C.badgesZh,svcLabel:"我的服务",svcTitle:"服务项目",svcDesc:"在您的每一步，我都在这里。",ctcLabel:"联系我",ctcTitle:"让我们谈谈",ctcDesc:"有任何问题吗？我很乐意听到您的声音。",send:"通过WhatsApp发送",footer:"© 2025 "+C.nameZh+" · 在马来西亚制作"},ms:{tag:"Selamat Datang",h1:"Hi, Saya "+C.name,bio:C.bio,consult:"Hubungi Saya",svc:"Lihat Perkhidmatan",stat1:C.stat1l,stat2:C.stat2l,badges:C.badgesEn,svcLabel:"Perkhidmatan",svcTitle:"Apa Yang Saya Tawarkan",svcDesc:"Di sini untuk membantu anda.",ctcLabel:"Hubungi",ctcTitle:"Mari Berbincang",ctcDesc:"Ada soalan? Saya ingin mendengar daripada anda.",send:"Hantar via WhatsApp",footer:"© 2025 "+C.name+" · Dibuat di Malaysia"}};
-let lang='en';
-function setLang(l){lang=l;document.querySelectorAll('.lang-btn').forEach((b,i)=>{b.classList.toggle('active',['en','zh','ms'][i]===l);});render(T[l]);}
-function render(t){const zh=lang==='zh';document.getElementById('nav-logo').textContent=C.name;document.getElementById('nav-links').innerHTML=['Services','Thoughts','Contact'].map((x,i)=>{const labels={en:['Services','Contact'],zh:['服务','联系我'],ms:['Perkhidmatan','Hubungi']};return'<a href="'+(i===0?'#services':'#contact')+'">'+x+'</a>';}).join('');document.getElementById('hero-tag').textContent=t.tag;document.getElementById('hero-h1').textContent=t.h1;document.getElementById('hero-bio').textContent=t.bio;document.getElementById('btn-consult').textContent=t.consult;document.getElementById('btn-svc').textContent=t.svc;document.getElementById('avatar-ring').textContent=C.name[0].toUpperCase();document.getElementById('card-name').textContent=zh?C.nameZh:C.name;document.getElementById('card-role').textContent=zh?C.taglineZh:C.tagline;document.getElementById('stat1-label').textContent=t.stat1;document.getElementById('stat2-label').textContent=t.stat2;document.getElementById('trust-badges').innerHTML=t.badges.map(b=>'<span class="badge">'+b+'</span>').join('');document.getElementById('svc-label').textContent=t.svcLabel;document.getElementById('svc-title').textContent=t.svcTitle;document.getElementById('svc-desc').textContent=t.svcDesc;document.getElementById('services-grid').innerHTML=C.services.map(s=>'<div class="service-card"><div class="service-icon">'+s.icon+'</div><h3>'+(zh?s.title_zh:s.title_en)+'</h3><p>'+(zh?s.desc_zh:s.desc_en)+'</p></div>').join('');document.getElementById('ctc-label').textContent=t.ctcLabel;document.getElementById('ctc-title').textContent=t.ctcTitle;document.getElementById('ctc-desc').textContent=t.ctcDesc;const links=[];if(C.wa)links.push('<a href="https://wa.me/'+C.wa+'" class="contact-link" target="_blank"><span>💬</span>'+(zh?'WhatsApp 联系':'WhatsApp Me')+'</a>');if(C.email)links.push('<a href="mailto:'+C.email+'" class="contact-link"><span>📧</span>'+C.email+'</a>');if(C.ig&&C.ig!=='#')links.push('<a href="'+C.ig+'" class="contact-link" target="_blank"><span>📸</span>Instagram</a>');if(C.li&&C.li!=='#')links.push('<a href="'+C.li+'" class="contact-link" target="_blank"><span>💼</span>LinkedIn</a>');document.getElementById('contact-links').innerHTML=links.join('');document.getElementById('btn-send').textContent=t.send;document.getElementById('footer-text').textContent=t.footer;}
-function sendMsg(){const n=document.getElementById('form-name').value;const p=document.getElementById('form-phone').value;const m=document.getElementById('form-msg').value;window.open('https://wa.me/'+C.wa+'?text='+encodeURIComponent('Hi '+C.name+', I am '+n+(p?' ('+p+')'':'')+'.\n\n'+m),'_blank');}
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+// ─── TRANSLATIONS ───────────────────────────────────────────────────────────
+const T = {
+  en: {
+    hero_tag:    "Welcome",
+    hero_h1:     `Hi, I'm ${CONFIG.name}`,
+    hero_bio:    CONFIG.bio_en,
+    btn_consult: "Book Free Consultation",
+    btn_read:    "Read My Thoughts",
+    card_name:   CONFIG.name,
+    card_role:   CONFIG.tagline_en,
+    stat1_label: CONFIG.stat1_label_en,
+    stat2_label: CONFIG.stat2_label_en,
+    badges:      CONFIG.badges_en,
+    svc_label:   "What I Offer",
+    svc_title:   "Services",
+    svc_desc:    "Here to guide you at every step of your financial journey.",
+    post_label:  "My Writing",
+    post_title:  "Thoughts & Insights",
+    post_desc:   "Honest takes on money, life, and everything in between.",
+    ctc_label:   "Get In Touch",
+    ctc_title:   "Let's Talk",
+    ctc_desc:    "Whether you have questions or just want to say hi, I'd love to hear from you.",
+    btn_send:    "Send Message",
+    footer:      CONFIG.footer_en,
+    form_name:   "Your name",
+    form_email:  "Email address",
+    form_msg:    "Your message...",
+    ctc_links: [
+      { icon: "💬", label: "WhatsApp Me", href: CONFIG.contact_whatsapp },
+      { icon: "📧", label: CONFIG.contact_email, href: `mailto:${CONFIG.contact_email}` },
+      { icon: "📸", label: "Instagram", href: CONFIG.contact_instagram },
+      { icon: "💼", label: "LinkedIn", href: CONFIG.contact_linkedin },
+    ]
+  },
+  zh: {
+    hero_tag:    "欢迎",
+    hero_h1:     `你好，我是 ${CONFIG.nameZh || CONFIG.name}`,
+    hero_bio:    CONFIG.bio_zh,
+    btn_consult: "预约免费咨询",
+    btn_read:    "阅读我的分享",
+    card_name:   CONFIG.nameZh || CONFIG.name,
+    card_role:   CONFIG.tagline_zh,
+    stat1_label: CONFIG.stat1_label_zh,
+    stat2_label: CONFIG.stat2_label_zh,
+    badges:      CONFIG.badges_zh,
+    svc_label:   "我的服务",
+    svc_title:   "服务项目",
+    svc_desc:    "在您财务之旅的每一步，我都在这里为您提供指导。",
+    post_label:  "我的文章",
+    post_title:  "想法与见解",
+    post_desc:   "关于金钱、生活的真实想法。",
+    ctc_label:   "联系我",
+    ctc_title:   "让我们谈谈",
+    ctc_desc:    "无论您有任何问题，还是只是想打个招呼，我很乐意听到您的声音。",
+    btn_send:    "发送消息",
+    footer:      CONFIG.footer_zh,
+    form_name:   "您的姓名",
+    form_email:  "电子邮件",
+    form_msg:    "您的留言...",
+    ctc_links: [
+      { icon: "💬", label: "WhatsApp 联系", href: CONFIG.contact_whatsapp },
+      { icon: "📧", label: CONFIG.contact_email, href: `mailto:${CONFIG.contact_email}` },
+      { icon: "📸", label: "Instagram", href: CONFIG.contact_instagram },
+      { icon: "💼", label: "领英", href: CONFIG.contact_linkedin },
+    ]
+  },
+  ms: {
+    hero_tag:    "Selamat Datang",
+    hero_h1:     `Hi, Saya ${CONFIG.name}`,
+    hero_bio:    CONFIG.bio_en,
+    btn_consult: "Tempah Konsultasi Percuma",
+    btn_read:    "Baca Tulisan Saya",
+    card_name:   CONFIG.name,
+    card_role:   CONFIG.tagline_en,
+    stat1_label: "Pelanggan",
+    stat2_label: "Tahun Pengalaman",
+    badges:      CONFIG.badges_en,
+    svc_label:   "Perkhidmatan",
+    svc_title:   "Apa Yang Saya Tawarkan",
+    svc_desc:    "Membantu anda dalam setiap langkah perjalanan kewangan anda.",
+    post_label:  "Penulisan",
+    post_title:  "Fikiran & Pandangan",
+    post_desc:   "Pandangan jujur tentang wang, kehidupan dan segalanya.",
+    ctc_label:   "Hubungi Saya",
+    ctc_title:   "Mari Berbincang",
+    ctc_desc:    "Sama ada anda ada soalan atau hanya ingin menyapa, saya ingin mendengar daripada anda.",
+    btn_send:    "Hantar Mesej",
+    footer:      CONFIG.footer_en,
+    form_name:   "Nama anda",
+    form_email:  "Alamat emel",
+    form_msg:    "Mesej anda...",
+    ctc_links: [
+      { icon: "💬", label: "WhatsApp Saya", href: CONFIG.contact_whatsapp },
+      { icon: "📧", label: CONFIG.contact_email, href: `mailto:${CONFIG.contact_email}` },
+      { icon: "📸", label: "Instagram", href: CONFIG.contact_instagram },
+      { icon: "💼", label: "LinkedIn", href: CONFIG.contact_linkedin },
+    ]
+  }
+};
+
+// ─── RENDER ──────────────────────────────────────────────────────────────────
+let currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach((b,i) => {
+    b.classList.toggle('active', ['en','zh','ms'][i] === lang);
+  });
+  render(T[lang]);
+}
+
+function render(t) {
+  const isZh = currentLang === 'zh';
+
+  // nav
+  document.getElementById('nav-logo').textContent = CONFIG.name;
+  document.getElementById('nav-links').innerHTML = CONFIG.nav_links_en
+    .map((l,i) => `<a href="${CONFIG.nav_anchors[i]}">${currentLang==='zh'?CONFIG.nav_links_zh[i]:currentLang==='ms'?['Perkhidmatan','Penulisan','Hubungi'][i]:l}</a>`)
+    .join('');
+
+  // hero
+  document.getElementById('hero-tag').textContent = t.hero_tag;
+  document.getElementById('hero-h1').textContent = t.hero_h1;
+  document.getElementById('hero-bio').textContent = t.hero_bio;
+  document.getElementById('btn-consult').textContent = t.btn_consult;
+  document.getElementById('btn-read').textContent = t.btn_read;
+
+  // card
+  document.getElementById('avatar-ring').textContent = CONFIG.avatarLetter;
+  document.getElementById('card-name').textContent = t.card_name;
+  document.getElementById('card-role').textContent = t.card_role;
+  document.getElementById('stat1-num').textContent = CONFIG.stat1_num;
+  document.getElementById('stat1-label').textContent = t.stat1_label;
+  document.getElementById('stat2-num').textContent = CONFIG.stat2_num;
+  document.getElementById('stat2-label').textContent = t.stat2_label;
+  document.getElementById('trust-badges').innerHTML = t.badges.map(b=>`<span class="badge">${b}</span>`).join('');
+
+  // services
+  document.getElementById('svc-label').textContent = t.svc_label;
+  document.getElementById('svc-title').textContent = t.svc_title;
+  document.getElementById('svc-desc').textContent = t.svc_desc;
+  document.getElementById('services-grid').innerHTML = CONFIG.services.map(s => `
+    <div class="service-card">
+      <div class="service-icon">${s.icon}</div>
+      <h3>${isZh ? s.title_zh : s.title_en}</h3>
+      <p>${isZh ? s.desc_zh : s.desc_en}</p>
+    </div>`).join('');
+
+  // posts
+  document.getElementById('post-label').textContent = t.post_label;
+  document.getElementById('post-title').textContent = t.post_title;
+  document.getElementById('post-desc').textContent = t.post_desc;
+  document.getElementById('posts-grid').innerHTML = CONFIG.posts.map(p => `
+    <div class="post-card">
+      <div class="post-date">${isZh ? p.date_zh : p.date_en}</div>
+      <h3>${isZh ? p.title_zh : p.title_en}</h3>
+      <p>${isZh ? p.excerpt_zh : p.excerpt_en}</p>
+      <span class="post-tag">${isZh ? p.tag_zh : p.tag_en}</span>
+    </div>`).join('');
+
+  // contact
+  document.getElementById('ctc-label').textContent = t.ctc_label;
+  document.getElementById('ctc-title').textContent = t.ctc_title;
+  document.getElementById('ctc-desc').textContent = t.ctc_desc;
+  document.getElementById('contact-links').innerHTML = t.ctc_links.map(l=>`
+    <a href="${l.href}" class="contact-link" target="_blank">
+      <span class="contact-icon">${l.icon}</span>${l.label}
+    </a>`).join('');
+  document.getElementById('btn-send').textContent = t.btn_send;
+  document.getElementById('form-name').placeholder = t.form_name;
+  document.getElementById('form-email').placeholder = t.form_email;
+  document.getElementById('form-msg').placeholder = t.form_msg;
+
+  // footer
+  document.getElementById('footer-text').innerHTML = t.footer.replace('❤️','<span>❤️</span>');
+}
+
+function sendMsg() {
+  const name = document.getElementById('form-name').value;
+  const msg  = document.getElementById('form-msg').value;
+  const text = encodeURIComponent(`Hi ${CONFIG.name}, I'm ${name}.\n\n${msg}`);
+  window.open(`https://wa.me/${CONFIG.contact_whatsapp.replace(/\D/g,'')}?text=${text}`, '_blank');
+}
+
+// ─── SCROLL ANIMATIONS ───────────────────────────────────────────────────────
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ─── INIT ────────────────────────────────────────────────────────────────────
 render(T.en);
 </script>
 </body>
